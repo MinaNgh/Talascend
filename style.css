@@ -1,0 +1,133 @@
+*{
+  margin: auto;
+  padding: auto;
+    box-sizing: border-box;
+}
+body{
+    
+  background-color: black;
+}
+.content{
+    text-align: center;
+ 
+}
+.image-frame {
+    display: block;
+    top: 40px;
+    position: absolute;
+    left: 30vw;
+    background-position: center;
+    width: 40vw;
+    height:40vw;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin:auto;
+/*    background-image: url('./img/1.jpg'); */
+    animation-name: change, scaleImage;
+    animation-duration: 20s;
+    animation-fill-mode: forwards;
+    animation-delay: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+/*    transition: 3s;*/
+
+}
+
+
+  p {
+    
+    color: white;
+
+    position: absolute;
+    left: 30vw;
+    height: 100%;
+    width: 40vw;
+    margin: 0;
+    text-align: center;
+    animation-name: scrollText;
+    animation-duration:3s;
+    animation-delay: 1s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    animation-iteration-count:4;
+    transform-origin: center;
+      transform: translateY(-100%); 
+  
+}
+p:before {
+    content: '';
+    animation-name: textChange;
+    animation-duration: 20s;
+    animation-delay: 1s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    transform-origin: center;
+}
+
+
+@keyframes change{
+
+    0%{
+        
+        background-image: url('./img/1.jpg'); 
+        
+    }
+    30%{
+       
+        background-image: url('./img/2.jpg');
+       
+    }
+   60%{
+        
+        background-image: url('./img/3.jpg'); 
+        
+    }
+   
+    100%{
+        
+        background-image: url('./img/1.jpg');  
+        
+    }
+}
+@keyframes scaleImage{
+    
+   
+    to{
+
+        transform: scale(2);
+    }
+}
+@keyframes textChange{
+
+    0%{
+        content: 'The Lunar Moon has captivated the human imagination throughout history. Though it is ever present, there is so little we know. We wanted to bring the Monn closer, to bring all of our stargazing dreams into reality. Our mission is to inspire as many apace lovers as we can, helping to awaken and eduacate a new generation of astronomy enthusiasts through the power of technology';
+        
+    }
+
+    30% {
+        content: 'using advanced Augmented Reality technology, LUNAR paired with the AstroReality app allows you to learn captivating facts and trivia, simulate Moon mission and embark on personalized lunar adventures from your home or classroom.';
+    }
+    
+    60%{
+        content: 'Using the most accurate industrial 3D printing technology available today, LUNAR is modeled to 0.006 millimeters per pixel precision, based on data captured by NASA\'s Lunar Reconnaissance Orbiter.';
+
+    }
+    100%{
+        content: 'The Lunar Moon has captivated the human imagination throughout history. Though it is ever present, there is so little we know. We wanted to bring the Monn closer, to bring all of our stargazing dreams into reality. Our mission is to inspire as many apace lovers as we can, helping to awaken and eduacate a new generation of astronomy enthusiasts through the power of technology';
+
+    }
+}
+
+@keyframes scrollText {
+
+
+    0%   { 
+          transform: translateY(100%); 
+ 
+  
+    100% { 
+     transform: translateY(-100%); 
+   }
+}
+
