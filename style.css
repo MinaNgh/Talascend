@@ -9,52 +9,89 @@ body{
 }
 .content{
     text-align: center;
+    width: 100%;
  
+}
+.image{
+    position: absolute;
+    top: 40px;
+    left: 30vw;
+    max-width: 40vw;
+    height:auto;
+    
+}
+.hide{
+    
+    visibility: hidden;
 }
 .image-frame {
     display: block;
-    top: 40px;
+    top: 100vh;
     position: absolute;
-    left: 30vw;
+    left: 25vw;
     background-position: center;
-    width: 40vw;
+    width: 50vw;
     height:40vw;
     background-size: cover;
     background-repeat: no-repeat;
     margin:auto;
-/*    background-image: url('./img/1.jpg'); */
+    background-image: url('./img/1.jpg'); 
+
+
+}
+
+
+  div.text {
+    
+    color: white;
+    position: absolute;
+    left: 25vw;
+    height: 50%;
+ 
+    width: 50vw;
+    margin: 0;
+    text-align: center;
+    top: 130vh;
+
+  
+}
+
+.change-scaleimage {
+    visibility: visible;
     animation-name: change, scaleImage;
     animation-duration: 20s;
     animation-fill-mode: forwards;
-    animation-delay: 1s;
+/*    animation-delay: 1s;*/
     animation-timing-function: ease-in-out;
     animation-iteration-count: 1;
-/*    transition: 3s;*/
-
 }
-
-
-  p {
-    
-    color: white;
-
-    position: absolute;
-    left: 30vw;
-    height: 100%;
-    width: 40vw;
-    margin: 0;
-    text-align: center;
+.scrollText {
     animation-name: scrollText;
     animation-duration:3s;
     animation-delay: 1s;
-    animation-timing-function: ease-in-out;
+    animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1.0);
+
     animation-fill-mode: forwards;
-    animation-iteration-count:4;
+/*    animation-direction:initial;*/
+    animation-iteration-count:5;
     transform-origin: center;
-      transform: translateY(-100%); 
-  
 }
-p:before {
+.lastScrollText {
+    animation-name: lastScrollText;
+    animation-duration:1s;
+    animation-delay: 15s;
+    animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1.0);
+
+    animation-fill-mode: backwards;
+/*    animation-direction:initial;*/
+    animation-iteration-count:1;
+    transform-origin: center;
+}
+div.lastScrollText:before{
+     content: 'The Lunar Moon has captivated the human imagination throughout history. Though it is ever present, there is so little we know. We wanted to bring the Monn closer, to bring all of our stargazing dreams into reality. Our mission is to inspire as many apace lovers as we can, helping to awaken and eduacate a new generation of astronomy enthusiasts through the power of technology';
+    
+}
+div.textChange:before {
     content: '';
     animation-name: textChange;
     animation-duration: 20s;
@@ -63,9 +100,9 @@ p:before {
     animation-fill-mode: forwards;
     animation-iteration-count: 1;
     transform-origin: center;
+/*    transform: translateY(-200vh) */
+    
 }
-
-
 @keyframes change{
 
     0%{
@@ -105,29 +142,47 @@ p:before {
         
     }
 
-    30% {
+    25% {
         content: 'using advanced Augmented Reality technology, LUNAR paired with the AstroReality app allows you to learn captivating facts and trivia, simulate Moon mission and embark on personalized lunar adventures from your home or classroom.';
     }
     
-    60%{
+   50%{
         content: 'Using the most accurate industrial 3D printing technology available today, LUNAR is modeled to 0.006 millimeters per pixel precision, based on data captured by NASA\'s Lunar Reconnaissance Orbiter.';
 
     }
-    100%{
+    75%{
         content: 'The Lunar Moon has captivated the human imagination throughout history. Though it is ever present, there is so little we know. We wanted to bring the Monn closer, to bring all of our stargazing dreams into reality. Our mission is to inspire as many apace lovers as we can, helping to awaken and eduacate a new generation of astronomy enthusiasts through the power of technology';
 
+    }
+     100%{
+         
+        content: 'The Lunar Moon has captivated the human imagination throughout history. Though it is ever present, there is so little we know. We wanted to bring the Monn closer, to bring all of our stargazing dreams into reality. Our mission is to inspire as many apace lovers as we can, helping to awaken and eduacate a new generation of astronomy enthusiasts through the power of technology';
+        
     }
 }
 
 @keyframes scrollText {
 
 
-    0%   { 
-          transform: translateY(100%); 
+    from  { 
+          transform: translateY(200vh); 
  
+    }
   
-    100% { 
-     transform: translateY(-100%); 
-   }
+    to {
+        
+            transform: translateY(-200vh); 
+        }
 }
+@keyframes lastScrollText {
+    from  { 
+          transform: translateY(200vh); 
+ 
+    }
+    to {
+        
+            transform: translateY(0vh); 
+    }
+}
+
 
